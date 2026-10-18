@@ -1,0 +1,1292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alvin Putrajaya — Creative Director</title>
+  <meta name="description" content="Alvin Putrajaya — Creative Director and Co-Founder of RMC (Rainmaker Creative), Jakarta. Brand foundation, expression, and production." />
+  <meta property="og:title" content="Alvin Putrajaya — Creative Director" />
+  <meta property="og:description" content="Alvin Putrajaya — Creative Director and Co-Founder of RMC (Rainmaker Creative), Jakarta. Brand foundation, expression, and production." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 fill=%27%23080808%27/%3E%3Ctext x=%2732%27 y=%2742%27 font-family=%27Arial Black,sans-serif%27 font-size=%2726%27 font-weight=%27900%27 fill=%27%23c8a96e%27 text-anchor=%27middle%27%3EAP%3C/text%3E%3C/svg%3E" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Epilogue:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Bebas+Neue&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #080808;
+      --bg2: #0f0f0f;
+      --bg3: #141414;
+      --text: #e8e4dc;
+      --text-muted: #6b6660;
+      --text-dim: #3a3735;
+      --accent: #c8a96e;
+      --accent2: #e8c98a;
+      --white: #f0ece4;
+      --border: rgba(200,169,110,0.15);
+      --border-dim: rgba(255,255,255,0.06);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Epilogue', sans-serif;
+      font-weight: 300;
+      line-height: 1.6;
+      overflow-x: hidden;
+      cursor: none;
+    }
+
+    /* CUSTOM CURSOR */
+    .cursor {
+      width: 8px; height: 8px;
+      background: var(--accent);
+      border-radius: 50%;
+      position: fixed; top: 0; left: 0;
+      pointer-events: none; z-index: 9999;
+      transition: transform 0.15s ease;
+      transform: translate(-50%, -50%);
+    }
+    .cursor-ring {
+      width: 36px; height: 36px;
+      border: 1px solid rgba(200,169,110,0.4);
+      border-radius: 50%;
+      position: fixed; top: 0; left: 0;
+      pointer-events: none; z-index: 9998;
+      transition: transform 0.35s ease, width 0.3s ease, height 0.3s ease, opacity 0.3s ease;
+      transform: translate(-50%, -50%);
+    }
+    body:hover .cursor-ring { opacity: 1; }
+    .cursor-ring.expand { width: 60px; height: 60px; border-color: var(--accent); }
+
+    /* GRAIN OVERLAY */
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+      opacity: 0.03;
+      pointer-events: none; z-index: 9990;
+    }
+
+    /* NAVIGATION */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      z-index: 1000;
+      padding: 28px 48px;
+      display: flex; align-items: center; justify-content: space-between;
+      transition: background 0.5s ease;
+    }
+    nav.scrolled {
+      background: rgba(8,8,8,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-dim);
+      padding: 20px 48px;
+    }
+    .nav-logo {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 15px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--white);
+      text-decoration: none;
+    }
+    .nav-logo span { color: var(--accent); }
+    .nav-links {
+      display: flex; gap: 40px; list-style: none;
+    }
+    .nav-links a {
+      font-family: 'Epilogue', sans-serif;
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex; flex-direction: column;
+      justify-content: flex-end;
+      padding: 0 48px 72px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 80% 20%, rgba(200,169,110,0.06) 0%, transparent 70%),
+                  radial-gradient(ellipse 50% 80% at 10% 90%, rgba(100,80,50,0.04) 0%, transparent 60%);
+    }
+
+    .hero-line {
+      position: absolute; top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      animation: lineSlide 3s ease forwards;
+      opacity: 0;
+    }
+    @keyframes lineSlide { 0% { opacity: 0; transform: scaleX(0); } 100% { opacity: 1; transform: scaleX(1); } }
+
+    .hero-number {
+      position: absolute; top: 48%; right: 48px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(280px, 30vw, 520px);
+      color: rgba(255,255,255,0.025);
+      line-height: 1;
+      pointer-events: none;
+      transform: translateY(-50%);
+      user-select: none;
+    }
+
+    .hero-content { position: relative; z-index: 2; }
+
+    .hero-label {
+      font-size: 11px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 24px;
+      opacity: 0;
+      animation: fadeUp 0.8s ease 0.4s forwards;
+    }
+
+    .hero-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(72px, 10vw, 160px);
+      line-height: 0.9;
+      color: var(--white);
+      letter-spacing: 0.01em;
+      opacity: 0;
+      animation: fadeUp 0.9s ease 0.6s forwards;
+    }
+
+    .hero-name em {
+      display: block;
+      color: rgba(200,169,110,0.35);
+      font-style: normal;
+    }
+
+    .hero-bottom {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-top: 48px;
+      opacity: 0;
+      animation: fadeUp 0.8s ease 1s forwards;
+    }
+
+    .hero-desc {
+      max-width: 360px;
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--text-muted);
+      line-height: 1.75;
+      font-style: italic;
+    }
+
+    .hero-tags {
+      display: flex; flex-direction: column; align-items: flex-end; gap: 6px;
+    }
+    .hero-tag {
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      border: 1px solid var(--border-dim);
+      padding: 5px 14px;
+      border-radius: 2px;
+    }
+
+    .scroll-hint {
+      position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+      opacity: 0;
+      animation: fadeUp 0.8s ease 1.4s forwards;
+    }
+    .scroll-hint span {
+      font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-dim);
+    }
+    .scroll-line {
+      width: 1px; height: 48px;
+      background: linear-gradient(to bottom, var(--accent), transparent);
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+    @keyframes scrollPulse { 0%,100% { opacity: 0.3; } 50% { opacity: 1; } }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* SECTIONS SHARED */
+    section { padding: 120px 48px; }
+
+    .section-label {
+      font-size: 11px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: clamp(36px, 5vw, 64px);
+      line-height: 1.05;
+      color: var(--white);
+    }
+
+    /* ABOUT */
+    .about { background: var(--bg2); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      margin-top: 64px;
+    }
+    .about-left { }
+    .about-bio {
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 1.9;
+      color: #a09890;
+      margin-top: 32px;
+    }
+    .about-bio strong { color: var(--text); font-weight: 400; }
+
+    .about-right { display: flex; flex-direction: column; justify-content: center; }
+
+    .timeline-item {
+      display: flex; gap: 24px;
+      padding: 24px 0;
+      border-bottom: 1px solid var(--border-dim);
+    }
+    .timeline-item:first-child { border-top: 1px solid var(--border-dim); }
+    .timeline-year {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 14px;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      min-width: 80px;
+      padding-top: 3px;
+    }
+    .timeline-content h4 {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+    .timeline-content p {
+      font-size: 13px;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    /* SERVICES */
+    .services { background: var(--bg); }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      margin-top: 64px;
+      background: var(--border-dim);
+      border: 1px solid var(--border-dim);
+    }
+    .service-card {
+      background: var(--bg);
+      padding: 48px 40px;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.4s ease;
+    }
+    .service-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: var(--accent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+    .service-card:hover { background: var(--bg3); }
+    .service-card:hover::before { transform: scaleX(1); }
+
+    .service-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 60px;
+      color: var(--text-dim);
+      line-height: 1;
+      margin-bottom: 24px;
+      transition: color 0.4s;
+    }
+    .service-card:hover .service-num { color: rgba(200,169,110,0.2); }
+
+    .service-title {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      color: var(--white);
+      margin-bottom: 16px;
+      letter-spacing: 0.02em;
+    }
+
+    .service-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.8;
+    }
+
+    .service-tags {
+      margin-top: 24px;
+      display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .service-tag {
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      border: 1px solid var(--border);
+      padding: 4px 10px;
+      border-radius: 2px;
+    }
+
+    /* WORK */
+    .work { background: var(--bg2); }
+    .work-header {
+      display: flex; align-items: flex-end; justify-content: space-between;
+      margin-bottom: 64px;
+    }
+    .work-note {
+      font-size: 13px;
+      color: var(--text-muted);
+      max-width: 280px;
+      text-align: right;
+      font-style: italic;
+      line-height: 1.7;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+    }
+
+    .project-card {
+      display: block;
+      text-decoration: none;
+      position: relative;
+      overflow: hidden;
+      background: var(--bg3);
+    }
+    .project-card.wide { grid-column: span 2; }
+
+    .project-card-img {
+      position: relative;
+      aspect-ratio: 1/1;
+      overflow: hidden;
+    }
+    .project-card.wide .project-card-img { aspect-ratio: 21/7; }
+
+    .img-slot {
+      width: 100%; height: 100%;
+      background: var(--bg3);
+      background-image:
+        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+      background-size: 40px 40px;
+      display: flex; align-items: center; justify-content: center;
+      flex-direction: column; gap: 10px;
+    }
+    .img-slot-icon {
+      width: 40px; height: 40px;
+      border: 1px dashed rgba(255,255,255,0.12);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px; color: rgba(255,255,255,0.15);
+    }
+    .img-slot-label {
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      color: rgba(255,255,255,0.12);
+      font-family: monospace;
+    }
+    .img-slot img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+    .project-card:hover .img-slot img { transform: scale(1.04); }
+
+    .project-card-overlay {
+      position: absolute; inset: 0;
+      background: rgba(8,8,8,0.72);
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+    .project-card:hover .project-card-overlay { opacity: 1; }
+    .project-card-overlay span {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      padding: 12px 28px;
+    }
+
+    .project-card-info {
+      padding: 24px 28px 28px;
+      border-top: 1px solid var(--border-dim);
+    }
+    .project-card-meta {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 10px;
+    }
+    .project-card-cat {
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    .project-card-year {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 13px;
+      color: var(--text-dim);
+      letter-spacing: 0.1em;
+    }
+    .project-card-title {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 22px;
+      color: var(--white);
+      margin-bottom: 6px;
+      transition: color 0.3s;
+    }
+    .project-card:hover .project-card-title { color: var(--accent); }
+    .project-card-sub {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 14px;
+    }
+    .project-card-skills {
+      display: flex; flex-wrap: wrap; gap: 6px;
+      margin-top: 4px;
+    }
+    .project-card-skill {
+      font-size: 9px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      border: 1px solid var(--border-dim);
+      padding: 3px 8px;
+      border-radius: 2px;
+      transition: color 0.3s, border-color 0.3s;
+    }
+    .project-card:hover .project-card-skill {
+      color: var(--accent);
+      border-color: rgba(200,169,110,0.25);
+    }
+
+
+    /* image placeholder + featured img */
+    .img-ph { background: var(--bg3); background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px); background-size: 40px 40px; }
+    .project-card-img > img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.6s ease, opacity .4s; }
+    .project-card:hover .project-card-img > img { transform: scale(1.04); }
+
+    /* MORE WORK INDEX */
+    .work-index { margin-top: 72px; border-top: 1px solid var(--border-dim); }
+    .work-index-head { display: flex; justify-content: space-between; align-items: center; padding: 24px 0; border-bottom: 1px solid var(--border-dim); }
+    .work-index-count { font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: var(--text-dim); }
+    .work-row { display: grid; grid-template-columns: 40px 120px 1fr 170px 70px 24px; gap: 28px; align-items: center; padding: 26px 0; border-bottom: 1px solid var(--border-dim); text-decoration: none; color: inherit; transition: background .3s, padding .3s; }
+    .work-row:hover { background: var(--bg2); padding-left: 16px; padding-right: 16px; }
+    .work-row-num { font-family: 'Bebas Neue', sans-serif; font-size: 18px; color: var(--text-dim); }
+    .work-row-thumb { display: block; width: 120px; aspect-ratio: 16/10; overflow: hidden; }
+    .work-row-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(.6); transition: filter .4s, transform .5s, opacity .4s; }
+    .work-row:hover .work-row-thumb img { filter: none; transform: scale(1.06); }
+    .work-row-main { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+    .work-row-title { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 20px; color: var(--white); transition: color .3s; }
+    .work-row:hover .work-row-title { color: var(--accent); }
+    .work-row-desc { font-size: 13px; color: var(--text-muted); line-height: 1.6; max-width: 620px; }
+    .work-row-skills { font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--text-dim); }
+    .work-row:hover .work-row-skills { color: var(--accent); }
+    .work-row-cat { font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--accent); }
+    .work-row-year { font-family: 'Bebas Neue', sans-serif; font-size: 15px; color: var(--text-dim); letter-spacing: .1em; }
+    .work-row-arrow { color: var(--text-dim); transition: color .3s, transform .3s; }
+    .work-row:hover .work-row-arrow { color: var(--accent); transform: translate(3px,-3px); }
+    @media (max-width: 900px) {
+      .work-row { grid-template-columns: 96px 1fr; gap: 18px; }
+      .work-row-thumb { width: 96px; }
+      .work-row-num, .work-row-cat, .work-row-year, .work-row-arrow { display: none; }
+    }
+
+    .work-cta {
+      margin-top: 40px; text-align: center;
+    }
+    .work-cta a {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--text-muted); text-decoration: none;
+      border-bottom: 1px solid var(--border-dim); padding-bottom: 4px;
+      transition: color 0.3s, border-color 0.3s;
+    }
+    .work-cta a:hover { color: var(--accent); border-color: var(--accent); }
+
+    /* CLIENTS */
+    .clients { background: var(--bg); padding: 80px 48px; }
+    .clients-title {
+      font-size: 11px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .clients-track-wrap {
+      overflow: hidden;
+      mask: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+    }
+    .clients-track {
+      display: flex; gap: 64px;
+      animation: marquee 30s linear infinite;
+      width: max-content;
+    }
+    .clients-track:hover { animation-play-state: paused; }
+
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    .client-name {
+      font-family: 'Syne', sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      white-space: nowrap;
+      transition: color 0.3s;
+      cursor: default;
+    }
+    .client-name:hover { color: var(--accent); }
+
+    /* EXPERTISE */
+    .expertise { background: var(--bg2); }
+    .expertise-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      margin-top: 64px;
+    }
+    .skill-group { margin-bottom: 40px; }
+    .skill-group-label {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+    .skill-item {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border-dim);
+    }
+    .skill-name {
+      font-family: 'Syne', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .skill-bar-wrap {
+      width: 120px; height: 2px;
+      background: var(--border-dim);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+    .skill-bar {
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      border-radius: 2px;
+      transform-origin: left;
+      animation: barGrow 1.2s ease forwards;
+      transform: scaleX(0);
+    }
+    @keyframes barGrow { to { transform: scaleX(1); } }
+
+    .philosophy-text {
+      font-size: 15px;
+      color: #7a7370;
+      line-height: 1.9;
+      font-style: italic;
+      border-left: 2px solid var(--accent);
+      padding-left: 28px;
+    }
+    .philosophy-text strong { color: var(--text); font-style: normal; }
+
+    .agency-card {
+      margin-top: 40px;
+      border: 1px solid var(--border);
+      padding: 32px;
+      position: relative;
+      background: linear-gradient(135deg, rgba(200,169,110,0.04), transparent);
+    }
+    .agency-card::before {
+      content: 'RMC';
+      position: absolute; top: -14px; left: 24px;
+      background: var(--bg2);
+      padding: 0 10px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 13px;
+      letter-spacing: 0.15em;
+      color: var(--accent);
+    }
+    .agency-card p {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.8;
+    }
+    .agency-card p strong { color: var(--text); }
+    .agency-link {
+      display: inline-flex; align-items: center; gap: 8px;
+      margin-top: 16px;
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      text-decoration: none;
+      transition: gap 0.3s;
+    }
+    .agency-link:hover { gap: 14px; }
+    .agency-link::after { content: '→'; }
+
+    /* CONTACT */
+    .contact {
+      background: var(--bg);
+      text-align: center;
+      padding: 140px 48px;
+      position: relative;
+      overflow: hidden;
+    }
+    .contact-bg-text {
+      position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(100px, 18vw, 280px);
+      color: rgba(255,255,255,0.02);
+      white-space: nowrap;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .contact-label { color: var(--accent); font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; }
+    .contact-heading {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(64px, 10vw, 140px);
+      line-height: 0.95;
+      color: var(--white);
+      margin: 20px 0 48px;
+      position: relative;
+      z-index: 2;
+    }
+    .contact-heading em {
+      color: var(--accent);
+      font-style: normal;
+    }
+
+    .contact-links {
+      display: flex; justify-content: center; gap: 24px; flex-wrap: wrap;
+      position: relative; z-index: 2;
+    }
+    .contact-link {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 14px 28px;
+      border: 1px solid var(--border);
+      color: var(--text);
+      text-decoration: none;
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .contact-link::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: var(--accent);
+      transform: scaleX(0); transform-origin: left;
+      transition: transform 0.3s;
+      z-index: -1;
+    }
+    .contact-link:hover::before { transform: scaleX(1); }
+    .contact-link:hover { color: var(--bg); border-color: var(--accent); }
+    .contact-link.primary {
+      background: var(--accent);
+      color: var(--bg);
+      border-color: var(--accent);
+    }
+    .contact-link.primary::before { background: var(--white); }
+
+    /* FOOTER */
+    footer {
+      background: var(--bg);
+      border-top: 1px solid var(--border-dim);
+      padding: 32px 48px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .footer-logo {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .footer-logo span { color: var(--accent); }
+    .footer-copy {
+      font-size: 11px;
+      color: var(--text-dim);
+      letter-spacing: 0.08em;
+    }
+
+    /* REVEAL ANIMATIONS */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      nav { padding: 24px 24px; }
+      nav.scrolled { padding: 16px 24px; }
+      .nav-links { gap: 24px; }
+      section { padding: 80px 24px; }
+      .hero { padding: 0 24px 60px; }
+      .about-grid { grid-template-columns: 1fr; gap: 48px; }
+      .services-grid { grid-template-columns: 1fr; }
+      .expertise-grid { grid-template-columns: 1fr; gap: 48px; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .project-card.wide { grid-column: span 1; }
+      .project-card.wide .project-card-img { aspect-ratio: 16/9; }
+      .work-note { display: none; }
+      .work-header { margin-bottom: 40px; }
+      .hero-bottom { flex-direction: column; align-items: flex-start; gap: 24px; }
+      footer { flex-direction: column; gap: 12px; text-align: center; }
+      .clients { padding: 60px 24px; }
+    }
+
+    @media (max-width: 600px) {
+      .nav-links { display: none; }
+      .hero-number { display: none; }
+      .contact { padding: 100px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <a class="nav-logo" href="#">Alvin <span>·</span> Putrajaya</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#expertise">Expertise</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-line"></div>
+    <div class="hero-number">CD</div>
+    <div class="hero-content">
+      <p class="hero-label">Creative Director &amp; Co-Founder, RMC</p>
+      <h1 class="hero-name">
+        Alvin<br>
+        <em>Putrajaya</em>
+      </h1>
+      <div class="hero-bottom">
+        <p class="hero-desc">Building brands that stand out, show up consistently, and stay in people's minds. Jakarta-based. Decade in the craft.</p>
+        <div class="hero-tags">
+          <span class="hero-tag">Brand Strategy</span>
+          <span class="hero-tag">Creative Direction</span>
+          <span class="hero-tag">Visual Identity</span>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="section-label reveal">Background</div>
+    <h2 class="section-title reveal">A decade of<br>craft &amp; intent.</h2>
+    <div class="about-grid">
+      <div class="about-left reveal">
+        <p class="about-bio">
+          With over <strong>15 years in the creative industry</strong>, I've built my career around solving problems through ideas, design, and strong collaboration. I focus on guiding teams, shaping brand narratives, and producing work that genuinely connects with people.
+          <br><br>
+          As Creative Director &amp; Co-Founder of <strong>RMC — Rainmaker Creative</strong>, I lead a brand-building studio that combines strategy, creativity, and execution — creating brands that <em>stand out and show up consistently everywhere.</em>
+        </p>
+      </div>
+      <div class="about-right reveal reveal-delay-2">
+        <div class="timeline-item">
+          <div class="timeline-year">2023–</div>
+          <div class="timeline-content">
+            <h4>Creative Director &amp; Co-Founder</h4>
+            <p>RMC — Rainmaker Creative</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2016–25</div>
+          <div class="timeline-content">
+            <h4>Creative Lead</h4>
+            <p>SweetEscape</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2012–16</div>
+          <div class="timeline-content">
+            <h4>Album Designer &amp; Photo Editor</h4>
+            <p>Axioo Photography</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2009–12</div>
+          <div class="timeline-content">
+            <h4>Digital Illustrator</h4>
+            <p>Main Studios</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2005–09</div>
+          <div class="timeline-content">
+            <h4>Bachelor of Design</h4>
+            <p>Bina Nusantara University</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="section-label reveal">What I Do</div>
+    <h2 class="section-title reveal">Built in<br>three layers.</h2>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-num">01</div>
+        <div class="service-title">Brand Foundation</div>
+        <p class="service-desc">Defining who you are. Deep research into market landscape, audience behavior, and competitive positioning — then crafting an identity that's distinct, defensible, and designed to resonate.</p>
+        <div class="service-tags">
+          <span class="service-tag">Research</span>
+          <span class="service-tag">Positioning</span>
+          <span class="service-tag">Identity Design</span>
+          <span class="service-tag">Brand Strategy</span>
+        </div>
+      </div>
+      <div class="service-card reveal reveal-delay-1">
+        <div class="service-num">02</div>
+        <div class="service-title">Brand Expression</div>
+        <p class="service-desc">How the brand connects. Translating strategy into compelling narratives — campaigns, content, and storytelling that create emotional connections and drive real engagement.</p>
+        <div class="service-tags">
+          <span class="service-tag">Campaigns</span>
+          <span class="service-tag">Storytelling</span>
+          <span class="service-tag">Content Strategy</span>
+          <span class="service-tag">Art Direction</span>
+        </div>
+      </div>
+      <div class="service-card reveal reveal-delay-2">
+        <div class="service-num">03</div>
+        <div class="service-title">Brand Production</div>
+        <p class="service-desc">Bringing the brand to life. Photography, video, and visual assets executed with precision. End-to-end production from concept to final delivery — no gaps, no handoffs.</p>
+        <div class="service-tags">
+          <span class="service-tag">Photography</span>
+          <span class="service-tag">Video Production</span>
+          <span class="service-tag">Post-Production</span>
+          <span class="service-tag">Visual Assets</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section class="work" id="work">
+    <div class="work-header">
+      <div>
+        <div class="section-label reveal">Selected Work</div>
+        <h2 class="section-title reveal">Highlighted Work</h2>
+      </div>
+      <p class="work-note reveal">Nine brands built at RMC across Foundation, Expression, and Production. Four highlights below — the full list follows.</p>
+    </div>
+
+    <div class="projects-grid">
+
+      <a class="project-card reveal" href="project-java-united.html">
+        <div class="project-card-img img-ph">
+          <img src="images/java-united/hero.jpg" alt="Java United FC" onerror="this.style.opacity=0">
+          <div class="project-card-overlay"><span>View Case Study ↗</span></div>
+        </div>
+        <div class="project-card-info">
+          <div class="project-card-meta">
+            <span class="project-card-cat">Brand Foundation · Kit System</span>
+            <span class="project-card-year">2026</span>
+          </div>
+          <div class="project-card-title">Java United FC</div>
+          <div class="project-card-sub">Shaped the club from the ground up — positioning, crest, visual language, and a full home/away/third kit system — then extended it to team transport, retail, and matchday.</div>
+          <div class="project-card-skills"><span class="project-card-skill">Brand Strategy</span><span class="project-card-skill">Crest Design</span><span class="project-card-skill">Kit System</span><span class="project-card-skill">Identity Rollout</span></div>
+        </div>
+      </a>
+
+      <a class="project-card reveal reveal-delay-1" href="project-hop.html">
+        <div class="project-card-img img-ph">
+          <img src="images/hop/hero.jpg" alt="House of Padel" onerror="this.style.opacity=0">
+          <div class="project-card-overlay"><span>View Case Study ↗</span></div>
+        </div>
+        <div class="project-card-info">
+          <div class="project-card-meta">
+            <span class="project-card-cat">Brand Foundation</span>
+            <span class="project-card-year">2023–24</span>
+          </div>
+          <div class="project-card-title">House of Padel</div>
+          <div class="project-card-sub">Built the brand from zero — positioning, identity system, and brand voice for a premium padel club, then carried it through social, merchandise, and the club environment.</div>
+          <div class="project-card-skills"><span class="project-card-skill">Brand Strategy</span><span class="project-card-skill">Visual Identity</span><span class="project-card-skill">Creative Direction</span><span class="project-card-skill">Brand Guidelines</span></div>
+        </div>
+      </a>
+
+      <a class="project-card reveal" href="project-kiri.html">
+        <div class="project-card-img img-ph">
+          <img src="images/kiri/hero.jpg" alt="KIRI Matcha & Garden" onerror="this.style.opacity=0">
+          <div class="project-card-overlay"><span>View Case Study ↗</span></div>
+        </div>
+        <div class="project-card-info">
+          <div class="project-card-meta">
+            <span class="project-card-cat">Brand Expression</span>
+            <span class="project-card-year">2026</span>
+          </div>
+          <div class="project-card-title">KIRI Matcha & Garden</div>
+          <div class="project-card-sub">Turned a Floral Matcha concept into one brand world under a single idea — Feel Blooming — across content, campaigns, product storytelling, KOL experiences, and in-store moments.</div>
+          <div class="project-card-skills"><span class="project-card-skill">Brand Concept</span><span class="project-card-skill">Campaign Direction</span><span class="project-card-skill">Content & Social</span><span class="project-card-skill">Retail Experience</span></div>
+        </div>
+      </a>
+
+      <a class="project-card reveal reveal-delay-1" href="project-electroniccity.html">
+        <div class="project-card-img img-ph">
+          <img src="images/electroniccity/hero.jpg" alt="Electronic City" onerror="this.style.opacity=0">
+          <div class="project-card-overlay"><span>View Case Study ↗</span></div>
+        </div>
+        <div class="project-card-info">
+          <div class="project-card-meta">
+            <span class="project-card-cat">Brand Production</span>
+            <span class="project-card-year">2024</span>
+          </div>
+          <div class="project-card-title">Electronic City</div>
+          <div class="project-card-sub">Led end-to-end production for a flagship electronics retailer — from studio photography to campaign films — building a cohesive visual language for the brand.</div>
+          <div class="project-card-skills"><span class="project-card-skill">Production Direction</span><span class="project-card-skill">Campaign Film</span><span class="project-card-skill">Photography</span><span class="project-card-skill">Post-Production</span></div>
+        </div>
+      </a>
+
+    </div>
+
+    <div class="work-index">
+      <div class="work-index-head reveal">
+        <span class="section-label" style="margin:0">More Work</span>
+        <span class="work-index-count">5 projects</span>
+      </div>
+      <a class="work-row reveal" href="project-wahu.html">
+        <span class="work-row-num">01</span>
+        <span class="work-row-thumb img-ph"><img src="images/wahu/hero.jpg" alt="" loading="lazy" onerror="this.style.opacity=0"></span>
+        <span class="work-row-main">
+          <span class="work-row-title">WAHU</span>
+          <span class="work-row-desc">Built an optimistic brand system that makes recycling feel rewarding — identity, messaging, environmental graphics for drop-off points, and digital applications.</span>
+          <span class="work-row-skills">Brand Identity · Messaging · Environmental Graphics · Digital Design</span>
+        </span>
+        <span class="work-row-cat">Brand Expression</span>
+        <span class="work-row-year">2025–26</span>
+        <span class="work-row-arrow">↗</span>
+      </a>
+      <a class="work-row reveal" href="project-sweetescape.html">
+        <span class="work-row-num">02</span>
+        <span class="work-row-thumb img-ph"><img src="images/sweetescape/hero.jpg" alt="" loading="lazy" onerror="this.style.opacity=0"></span>
+        <span class="work-row-main">
+          <span class="work-row-title">SweetEscape</span>
+          <span class="work-row-desc">Directed ongoing campaigns that turned travel photography into emotional brand moments — narrative frameworks, campaign art direction, and social content.</span>
+          <span class="work-row-skills">Campaign Direction · Art Direction · Storytelling · Content Strategy</span>
+        </span>
+        <span class="work-row-cat">Brand Expression</span>
+        <span class="work-row-year">2023–25</span>
+        <span class="work-row-arrow">↗</span>
+      </a>
+      <a class="work-row reveal" href="project-dub.html">
+        <span class="work-row-num">03</span>
+        <span class="work-row-thumb img-ph"><img src="images/dub/hero.jpg" alt="" loading="lazy" onerror="this.style.opacity=0"></span>
+        <span class="work-row-main">
+          <span class="work-row-title">DUB</span>
+          <span class="work-row-desc">Designed a bold monogram, red-and-black palette, and condensed type system, then carried it into a campaign voice built around hustle and grit.</span>
+          <span class="work-row-skills">Logo Design · Visual Identity · Campaign Voice · Social Design</span>
+        </span>
+        <span class="work-row-cat">Brand Foundation</span>
+        <span class="work-row-year">2026</span>
+        <span class="work-row-arrow">↗</span>
+      </a>
+      <a class="work-row reveal" href="project-bumi.html">
+        <span class="work-row-num">04</span>
+        <span class="work-row-thumb img-ph"><img src="images/bumi/hero.jpg" alt="" loading="lazy" onerror="this.style.opacity=0"></span>
+        <span class="work-row-main">
+          <span class="work-row-title">Bumi Reserve</span>
+          <span class="work-row-desc">Created an earthy identity system — symbol, palette, and editorial typography — applied across posters, signage, and stationery.</span>
+          <span class="work-row-skills">Visual Identity · Logo Design · Editorial Design · Brand Applications</span>
+        </span>
+        <span class="work-row-cat">Brand Foundation</span>
+        <span class="work-row-year">2025</span>
+        <span class="work-row-arrow">↗</span>
+      </a>
+      <a class="work-row reveal" href="project-indragraha.html">
+        <span class="work-row-num">05</span>
+        <span class="work-row-thumb img-ph"><img src="images/indragraha/hero.jpg" alt="" loading="lazy" onerror="this.style.opacity=0"></span>
+        <span class="work-row-main">
+          <span class="work-row-title">Indragraha Nusaplasindo</span>
+          <span class="work-row-desc">Turned a highly technical pallet range into a clear, contemporary catalogue — product architecture, on-site industrial photography, copy, and information design.</span>
+          <span class="work-row-skills">Information Design · Industrial Photography · Catalogue Design · Copywriting</span>
+        </span>
+        <span class="work-row-cat">Brand Production</span>
+        <span class="work-row-year">2024</span>
+        <span class="work-row-arrow">↗</span>
+      </a>
+    </div>
+
+    <div class="work-cta reveal">
+      <a href="https://www.behance.net/alvinputrafdd7" target="_blank">View more on Behance ↗</a>
+    </div>
+  </section>
+
+  <!-- CLIENTS -->
+  <section class="clients" id="clients">
+    <p class="clients-title">Brands worked with</p>
+    <div class="clients-track-wrap">
+      <div class="clients-track">
+        <!-- First set -->
+        <span class="client-name">YouTube</span>
+        <span class="client-name">·</span>
+        <span class="client-name">Meta</span>
+        <span class="client-name">·</span>
+        <span class="client-name">Google</span>
+        <span class="client-name">·</span>
+        <span class="client-name">Premier League</span>
+        <span class="client-name">·</span>
+        <span class="client-name">StarHub</span>
+        <span class="client-name">·</span>
+        <span class="client-name">NUS</span>
+        <span class="client-name">·</span>
+        <span class="client-name">PSSI</span>
+        <span class="client-name">·</span>
+        <span class="client-name">SweetEscape</span>
+        <span class="client-name">·</span>
+        <span class="client-name">Electronic City</span>
+        <span class="client-name">·</span>
+        <span class="client-name">House of Padel</span>
+        <span class="client-name">·</span>
+        <span class="client-name">Wahu</span>
+        <span class="client-name">·</span>
+        <span class="client-name">True Aussie Beef</span>
+        <span class="client-name">·</span>
+        <span class="client-name">EMC Healthcare</span>
+        <span class="client-name">·</span>
+        <span class="client-name">Cypruz</span>
+        <span class="client-name">·</span>
+        <!-- Duplicate for seamless loop -->
+        <span class="client-name">YouTube</span>
+        <span class="client-name">·</span>
+        <span class="client-name">Meta</span>
+        <span class="client-name">·</span>
+        <span class="client-name">Google</span>
+        <span class="client-name">·</span>
+        <span class="client-name">Premier League</span>
+        <span class="client-name">·</span>
+        <span class="client-name">StarHub</span>
+        <span class="client-name">·</span>
+        <span class="client-name">NUS</span>
+        <span class="client-name">·</span>
+        <span class="client-name">PSSI</span>
+        <span class="client-name">·</span>
+        <span class="client-name">SweetEscape</span>
+        <span class="client-name">·</span>
+        <span class="client-name">Electronic City</span>
+        <span class="client-name">·</span>
+        <span class="client-name">House of Padel</span>
+        <span class="client-name">·</span>
+        <span class="client-name">Wahu</span>
+        <span class="client-name">·</span>
+        <span class="client-name">True Aussie Beef</span>
+        <span class="client-name">·</span>
+        <span class="client-name">EMC Healthcare</span>
+        <span class="client-name">·</span>
+        <span class="client-name">Cypruz</span>
+        <span class="client-name">·</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERTISE -->
+  <section class="expertise" id="expertise">
+    <div class="section-label reveal">Skills &amp; Craft</div>
+    <h2 class="section-title reveal">The toolkit.</h2>
+    <div class="expertise-grid">
+      <div class="reveal">
+        <div class="skill-group">
+          <div class="skill-group-label">Design &amp; Direction</div>
+          <div class="skill-item">
+            <span class="skill-name">Creative Direction</span>
+            <div class="skill-bar-wrap"><div class="skill-bar" style="width:95%;animation-delay:0.5s"></div></div>
+          </div>
+          <div class="skill-item">
+            <span class="skill-name">Brand Identity</span>
+            <div class="skill-bar-wrap"><div class="skill-bar" style="width:90%;animation-delay:0.6s"></div></div>
+          </div>
+          <div class="skill-item">
+            <span class="skill-name">Graphic Design</span>
+            <div class="skill-bar-wrap"><div class="skill-bar" style="width:92%;animation-delay:0.7s"></div></div>
+          </div>
+          <div class="skill-item">
+            <span class="skill-name">Digital Illustration</span>
+            <div class="skill-bar-wrap"><div class="skill-bar" style="width:80%;animation-delay:0.8s"></div></div>
+          </div>
+        </div>
+        <div class="skill-group" style="margin-top:36px">
+          <div class="skill-group-label">Production</div>
+          <div class="skill-item">
+            <span class="skill-name">Photography</span>
+            <div class="skill-bar-wrap"><div class="skill-bar" style="width:85%;animation-delay:0.9s"></div></div>
+          </div>
+          <div class="skill-item">
+            <span class="skill-name">Videography</span>
+            <div class="skill-bar-wrap"><div class="skill-bar" style="width:80%;animation-delay:1.0s"></div></div>
+          </div>
+          <div class="skill-item">
+            <span class="skill-name">Project Management</span>
+            <div class="skill-bar-wrap"><div class="skill-bar" style="width:88%;animation-delay:1.1s"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal reveal-delay-2">
+        <p class="philosophy-text">
+          "A brand is not just how it looks — it's <strong>how it shows up.</strong> Every touchpoint is an opportunity to be remembered, or forgotten."
+          <br><br>
+          I believe in <strong>strategy-first creativity</strong>. Beautiful work without a foundation is decoration. The brands that last are built with clarity, crafted with precision, and expressed with consistency.
+        </p>
+
+        <div class="agency-card">
+          <p>
+            <strong>Rainmaker Creative (RMC)</strong> is the agency I co-founded to bring this philosophy to life at scale — a brand-building studio covering Foundation, Expression, and Production under one roof.
+          </p>
+          <a class="agency-link" href="https://www.instagram.com/rmc.creative/" target="_blank">View RMC on Instagram</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="contact-bg-text">LET'S TALK</div>
+    <p class="contact-label">Get in touch</p>
+    <h2 class="contact-heading">
+      Let's Build<br>
+      <em>Something</em><br>
+      People Remember.
+    </h2>
+    <div class="contact-links">
+      <a class="contact-link primary" href="mailto:alvin.putrajaya@gmail.com">alvin.putrajaya@gmail.com</a>
+      <a class="contact-link" href="tel:+6281808209699">+62 818 0820 9699</a>
+      <a class="contact-link" href="https://www.behance.net/alvinputrafdd7" target="_blank">Behance</a>
+      <a class="contact-link" href="https://www.instagram.com/rmc.creative/" target="_blank">RMC Instagram</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">Alvin <span>·</span> Putrajaya — Creative Director</div>
+    <div class="footer-copy">© 2026 · Jakarta, Indonesia</div>
+  </footer>
+
+  <script>
+    // Auto-load images if files exist
+    document.querySelectorAll('.img-slot').forEach(slot => {
+      const label = slot.querySelector('.img-slot-label');
+      if (!label) return;
+      const src = label.textContent.trim();
+      const img = new Image();
+      img.onload = () => {
+        slot.innerHTML = '';
+        slot.style.backgroundImage = 'none';
+        img.style.cssText = 'width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.6s ease';
+        slot.appendChild(img);
+      };
+      img.src = src;
+    });
+
+    // Cursor
+    const cursor = document.getElementById('cursor');
+    const ring = document.getElementById('cursorRing');
+    let mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
+
+    document.addEventListener('mousemove', e => {
+      mouseX = e.clientX; mouseY = e.clientY;
+      cursor.style.transform = `translate(${mouseX}px, ${mouseY}px) translate(-50%, -50%)`;
+    });
+
+    function animateRing() {
+      ringX += (mouseX - ringX) * 0.12;
+      ringY += (mouseY - ringY) * 0.12;
+      ring.style.transform = `translate(${ringX}px, ${ringY}px) translate(-50%, -50%)`;
+      requestAnimationFrame(animateRing);
+    }
+    animateRing();
+
+    document.querySelectorAll('a, button').forEach(el => {
+      el.addEventListener('mouseenter', () => ring.classList.add('expand'));
+      el.addEventListener('mouseleave', () => ring.classList.remove('expand'));
+    });
+
+    // Nav scroll
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    // Reveal on scroll
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); }
+      });
+    }, { threshold: 0.15 });
+    reveals.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
