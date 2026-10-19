@@ -238,6 +238,26 @@
     .team-chip { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 14px; color: var(--white); border: 1px solid var(--border-dim); padding: 12px 18px; }
     .team-chip::before { content: ''; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--project-accent); margin-right: 10px; vertical-align: middle; }
     @media (max-width: 900px) { .team-inner { grid-template-columns: 1fr; gap: 24px; } }
+    .campaigns { background: var(--bg); }
+    .camp-list { display: flex; flex-direction: column; margin-top: 24px; border-top: 1px solid var(--border-dim); }
+    .camp { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr); gap: 56px; padding: 48px 0; border-bottom: 1px solid var(--border-dim); align-items: center; }
+    .camp-year { font-family: 'Bebas Neue', sans-serif; font-size: 56px; line-height: 1; color: var(--project-accent); }
+    .camp-type { font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: var(--text-muted); margin: 12px 0 10px; }
+    .camp-title { font-family: 'Syne', sans-serif; font-weight: 800; font-size: clamp(24px, 2.6vw, 34px); color: var(--white); line-height: 1.15; margin-bottom: 14px; text-wrap: balance; }
+    .camp-desc { font-size: 14px; color: #8a8480; line-height: 1.8; max-width: 420px; }
+    .camp-media { min-width: 0; }
+    .yt { position: relative; display: block; width: 100%; aspect-ratio: 16/9; border: 0; padding: 0; background: var(--bg3); cursor: pointer; overflow: hidden; }
+    .yt img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .6s ease, opacity .3s; opacity: .85; }
+    .yt:hover img, .yt:focus-visible img { transform: scale(1.03); opacity: 1; }
+    .yt:focus-visible { outline: 2px solid var(--project-accent); outline-offset: 3px; }
+    .yt-play { position: absolute; left: 50%; top: 50%; width: 72px; height: 72px; margin: -36px 0 0 -36px; border-radius: 50%; background: var(--project-accent); }
+    .yt-play::after { content: ''; position: absolute; left: 29px; top: 23px; border-style: solid; border-width: 13px 0 13px 21px; border-color: transparent transparent transparent var(--bg); }
+    .yt iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+    .yt-link { display: inline-block; margin-top: 12px; font-size: 11px; letter-spacing: .15em; text-transform: uppercase; color: var(--text-muted); text-decoration: none; }
+    .yt-link:hover { color: var(--project-accent); }
+    .story-frame { width: min(300px, 100%); aspect-ratio: 9/16; overflow: hidden; border: 1px solid var(--border-dim); background: var(--bg3); }
+    .story-frame video { width: 100%; height: 100%; object-fit: cover; display: block; }
+    @media (max-width: 900px) { .camp { grid-template-columns: 1fr; gap: 24px; padding: 36px 0; } .camp-year { font-size: 44px; } }
     .work-stack { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; align-items: start; }
     @media (max-width: 900px) { .work-stack { grid-template-columns: 1fr; } }
     .work-figure { margin: 0; overflow: hidden; min-height: 200px; }
@@ -327,6 +347,102 @@
     </div>
   </section>
 
+
+  <section class="section campaigns">
+    <div class="reveal">
+      <div class="brief-label">Selected Campaigns</div>
+      <h2 class="brief-heading" style="max-width:640px">Six campaigns, 2018 to 2023.</h2>
+    </div>
+    <div class="camp-list">
+      <article class="camp reveal camp-vertical">
+        <div class="camp-text">
+          <div class="camp-year">2018</div>
+          <div class="camp-type">Tactical Promotion</div>
+          <h3 class="camp-title">Spin-a-Sale</h3>
+          <p class="camp-desc">A Q2 sales push built as a game: spin the wheel for up to 50% off a summer-holiday photoshoot. Bold pop-art visuals made for stories and quick taps.</p>
+        </div>
+        <div class="camp-media">
+          <div class="story-frame"><video src="images/sweetescape/spin-a-sale.mp4" poster="images/sweetescape/spin-a-sale.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Spin-a-Sale animated story"></video></div>
+        </div>
+      </article>
+      <article class="camp reveal">
+        <div class="camp-text">
+          <div class="camp-year">2018</div>
+          <div class="camp-type">Service Launch</div>
+          <h3 class="camp-title">Escape in 1 Hour</h3>
+          <p class="camp-desc">Launching a new service, the one-hour photoshoot.</p>
+        </div>
+        <div class="camp-media">
+          <button class="yt" type="button" data-id="4Jcc66vy830" aria-label="Play Escape in 1 Hour film">
+            <img src="https://i.ytimg.com/vi/4Jcc66vy830/hqdefault.jpg" alt="Escape in 1 Hour campaign film" loading="lazy">
+            <span class="yt-play" aria-hidden="true"></span>
+          </button>
+          <a class="yt-link" href="https://www.youtube.com/watch?v=4Jcc66vy830" target="_blank" rel="noopener">Watch on YouTube ↗</a>
+        </div>
+      </article>
+      <article class="camp reveal">
+        <div class="camp-text">
+          <div class="camp-year">2019</div>
+          <div class="camp-type">Annual Brand Campaign</div>
+          <h3 class="camp-title">Make Life Memorable</h3>
+          <p class="camp-desc">The big campaign of the year, launching SweetEscape's new tagline and setting the tone for everything that followed.</p>
+        </div>
+        <div class="camp-media">
+          <button class="yt" type="button" data-id="PTW3OcEeDK0" aria-label="Play Make Life Memorable film">
+            <img src="https://i.ytimg.com/vi/PTW3OcEeDK0/hqdefault.jpg" alt="Make Life Memorable campaign film" loading="lazy">
+            <span class="yt-play" aria-hidden="true"></span>
+          </button>
+          <a class="yt-link" href="https://www.youtube.com/watch?v=PTW3OcEeDK0" target="_blank" rel="noopener">Watch on YouTube ↗</a>
+        </div>
+      </article>
+      <article class="camp reveal">
+        <div class="camp-text">
+          <div class="camp-year">2019</div>
+          <div class="camp-type">Awareness · Holiday</div>
+          <h3 class="camp-title">For Every Moment</h3>
+          <p class="camp-desc">An awareness campaign to make a photoshoot part of the holiday, boosting occasion-based bookings while people travel.</p>
+        </div>
+        <div class="camp-media">
+          <button class="yt" type="button" data-id="E03AS_bqJ2M" aria-label="Play For Every Moment film">
+            <img src="https://i.ytimg.com/vi/E03AS_bqJ2M/hqdefault.jpg" alt="For Every Moment campaign film" loading="lazy">
+            <span class="yt-play" aria-hidden="true"></span>
+          </button>
+          <a class="yt-link" href="https://www.youtube.com/watch?v=E03AS_bqJ2M" target="_blank" rel="noopener">Watch on YouTube ↗</a>
+        </div>
+      </article>
+      <article class="camp reveal">
+        <div class="camp-text">
+          <div class="camp-year">2020</div>
+          <div class="camp-type">Awareness</div>
+          <h3 class="camp-title">Captured Perfectly</h3>
+          <p class="camp-desc">An awareness campaign on why a professional photoshoot matters for the moments people want to keep.</p>
+        </div>
+        <div class="camp-media">
+          <button class="yt" type="button" data-id="zvR-ovnFH5Y" aria-label="Play Captured Perfectly film">
+            <img src="https://i.ytimg.com/vi/zvR-ovnFH5Y/hqdefault.jpg" alt="Captured Perfectly campaign film" loading="lazy">
+            <span class="yt-play" aria-hidden="true"></span>
+          </button>
+          <a class="yt-link" href="https://www.youtube.com/watch?v=zvR-ovnFH5Y" target="_blank" rel="noopener">Watch on YouTube ↗</a>
+        </div>
+      </article>
+      <article class="camp reveal">
+        <div class="camp-text">
+          <div class="camp-year">2023</div>
+          <div class="camp-type">Annual Brand Campaign</div>
+          <h3 class="camp-title">Smile, We're Here</h3>
+          <p class="camp-desc">The annual campaign of 2023, built to strengthen SweetEscape's credibility with customers.</p>
+        </div>
+        <div class="camp-media">
+          <button class="yt" type="button" data-id="c3NLlCplAsA" aria-label="Play Smile, We're Here film">
+            <img src="https://i.ytimg.com/vi/c3NLlCplAsA/hqdefault.jpg" alt="Smile, We're Here campaign film" loading="lazy">
+            <span class="yt-play" aria-hidden="true"></span>
+          </button>
+          <a class="yt-link" href="https://www.youtube.com/watch?v=c3NLlCplAsA" target="_blank" rel="noopener">Watch on YouTube ↗</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
   <section class="gallery">
     <h2 class="gallery-heading reveal">The Work</h2>
     <div class="work-stack">
@@ -377,6 +493,13 @@
     window.addEventListener('scroll', ()=>nav.classList.toggle('scrolled', window.scrollY > 60));
     const io = new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('visible'); }), {threshold:0.08});
     document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+    document.querySelectorAll('.yt').forEach(b => b.addEventListener('click', () => {
+      const f = document.createElement('iframe');
+      f.src = 'https://www.youtube-nocookie.com/embed/' + b.dataset.id + '?autoplay=1&rel=0';
+      f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen'; f.allowFullscreen = true;
+      f.title = b.getAttribute('aria-label');
+      b.querySelector('.yt-play')?.remove(); b.appendChild(f);
+    }, { once: true }));
   </script>
 </body>
 </html>
