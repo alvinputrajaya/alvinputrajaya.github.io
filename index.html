@@ -147,6 +147,25 @@
       user-select: none;
     }
 
+
+    .hero-photo {
+      position: absolute; inset: 0;
+      background: url("images/alvin/hero-portrait.jpg") 67% 30% / cover no-repeat;
+      opacity: 0; animation: photoIn 1.8s ease 0.1s forwards;
+    }
+    .hero-photo::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(to top, var(--bg) 0%, rgba(8,8,8,0.55) 24%, transparent 52%),
+                  linear-gradient(to right, rgba(8,8,8,0.55) 0%, transparent 45%);
+    }
+    @keyframes photoIn { from { opacity: 0; transform: scale(1.03); } to { opacity: 1; transform: none; } }
+    @media (prefers-reduced-motion: reduce) { .hero-photo { animation: none; opacity: 1; } }
+    .hero-number { display: none; }
+    @media (max-width: 700px) {
+      .hero-photo { background-image: url("images/alvin/hero-portrait-m.jpg"); background-position: 55% top; }
+      .hero-photo::after { background: linear-gradient(to top, var(--bg) 0%, rgba(8,8,8,0.8) 34%, rgba(8,8,8,0.1) 62%, transparent 100%); }
+      .scroll-hint { display: none; }
+    }
     .hero-content { position: relative; z-index: 2; }
 
     .hero-label {
@@ -819,6 +838,7 @@
   <!-- HERO -->
   <section class="hero" id="hero">
     <div class="hero-bg"></div>
+    <div class="hero-photo" role="img" aria-label="Portrait of Alvin Putrajaya"></div>
     <div class="hero-line"></div>
     <div class="hero-number">CD</div>
     <div class="hero-content">
